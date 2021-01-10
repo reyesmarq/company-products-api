@@ -1,0 +1,82 @@
+#################################################
+# PRODUCTS
+#################################################
+#################################################
+# Get all of the products
+get http://localhost:3000/api/products
+Content-Type: application/json
+Accept: application/json
+
+#################################################
+# Get product by id
+get http://localhost:3000/api/products/5ff63b6188c69c7bf8bd69a1
+Content-Type: application/json
+Accept: application/json
+
+#################################################
+# Create a Product
+post http://localhost:3000/api/products
+Content-Type: application/json
+Accept: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjg4NWQ1NDM3ZGE5NmI5MDUwM2Q0YSIsImlhdCI6MTYxMDIxNTc0NCwiZXhwIjoxNjEwMzAyMTQ0fQ.W1nCFlssjoCNXhJnM_e0Sl91AoacsyjtcqStB4QehIg
+
+{
+  "name": "asus 15",
+  "category": "laptops",
+  "price": 1999.99,
+  "imgURL": "https://www.notebookcheck.net/uploads/tx_nbc2/4zu3_Razer_Blade_15_Advanced_Model_2020.jpg"
+}
+
+#################################################
+# Update a Product by Id
+put http://localhost:3000/api/products/5ff63b6188c69c7bf8bd69a1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Laptop hp celeron",
+  "category": "laptops",
+  "price": "999.99",
+  "imgURL": "https://www.notebookcheck.net/uploads/tx_nbc2/4zu3_Razer_Blade_15_Advanced_Model_2020.jpg"
+}
+
+#################################################
+# Delete a Product by ID
+delete http://localhost:3000/api/products/5ff63b6188c69c7bf8bd69a1
+Content-Type: application/json
+Accept: application/json
+
+#################################################
+# AUTH
+#################################################
+#################################################
+# Signup
+post http://localhost:3000/api/auth/signup
+Content-Type: application/json
+Accept: application/json
+
+# {
+#   "username": "maria",
+#   "email": "maria@hotmail.com",
+#   "password": "reyes859",
+#   "roles": [
+#     "admin",
+#     "moderator"
+#   ]
+# }
+{
+  "username": "maria",
+  "email": "maria@hotmail.com",
+  "password": "reyes859"
+}
+
+#################################################
+# Signup
+post http://localhost:3000/api/auth/signin
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "reyes.marq@hotmail.com",
+  "password": "reyes859"
+}
